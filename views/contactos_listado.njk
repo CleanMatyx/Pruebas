@@ -1,0 +1,18 @@
+{% extends "base.njk" %}
+
+{% block titulo %}Contactos | Listado{% endblock %}
+
+{% block contenido %}
+
+    <h1>Listado de contactos</h1>
+
+    <ul>
+        {% for contacto in contactos %}
+            <li class="mb-2">{{ contacto.nombre }} 
+                <a href="/contactos/{{ contacto.id }}" class="btn btn-success">Ver Ficha</a>
+
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
