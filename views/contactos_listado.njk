@@ -7,12 +7,16 @@
     <h1>Listado de contactos</h1>
 
     <ul>
-        {% for contacto in contactos %}
-            <li class="mb-2">{{ contacto.nombre }} 
-                <a href="/contactos/{{ contacto.id }}" class="btn btn-success">Ver Ficha</a>
+    {% for contacto in contactos %}
+        <li class="mb-2">{{ contacto.nombre }} 
+            <a href="/contactos/{{ contacto.id }}" class="btn btn-success">Ficha</a>
 
-            </li>
-        {% endfor %}
-    </ul>
+            <form action="/contactos/{{ contacto.id }}" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <a href="/contactos/{{ contacto.id }}/edit" class="btn btn-danger">Borrar</a>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
 
 {% endblock %}
