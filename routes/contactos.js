@@ -143,7 +143,7 @@ router.put('/:id', auth.protegerRuta, (req, res) => {
 // });
 
 router.delete('/:id', (req, res) => {
-    Contacto.findByIdAndRemove(req.params.id).then(resultado => {
+    Contacto.findByIdAndDelete(req.params.id).then(resultado => {
         res.redirect(req.baseUrl);
     }).catch(error => {
         res.render('error', {error: "Error borrando contacto"});
